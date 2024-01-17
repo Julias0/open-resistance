@@ -1,20 +1,83 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> Ionic Swiper </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-row>
+            <ion-col>
+              Health
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              {{health}}/100
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col>
+          <ion-row>
+            <ion-col>
+              Wealth
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              {{wealth}} CR
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col>
+          <ion-row>
+            <ion-col>
+              Popularity
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              {{popularity}}
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col>
+          <ion-row>
+            <ion-col>
+              Age
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              {{age}}
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
+  <swiper-container #swiper>
+    <swiper-slide *ngFor="let slide of slides">
+      <div class="content">
+        <div class="textContent">
+          <h2>
+            {{slide.content}}
+          </h2>
+        </div>
+        <div class="choices">
+          <div *ngIf="slide.rightChoice" class="rightSwipeContent">
+            {{slide.rightChoice}}
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </div>
+          <div *ngIf="slide.leftChoice" class="leftSwipeContent">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+            {{slide.leftChoice}}
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+  </swiper-container>
 </ion-content>
