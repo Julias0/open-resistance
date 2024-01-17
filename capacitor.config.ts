@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'fatakeshto-game',
+  appId: 'io.dhar.opresistance',
+  appName: 'open-resistance',
   webDir: 'www',
   server: {
     androidScheme: 'https'
